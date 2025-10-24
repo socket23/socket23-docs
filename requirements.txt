@@ -1,2 +1,19 @@
+# Core MkDocs
 mkdocs==1.5.3
 mkdocs-material==9.5.12
+
+# Material Extensions
+pymdown-extensions==10.7
+
+# Plugins
+mkdocs-minify-plugin==0.8.0
+mkdocs-git-revision-date-localized-plugin==1.2.4
+mkdocs-awesome-pages-plugin==2.9.2
+
+# Additional utilities
+Pygments==2.17.2
+markdown==3.5.2
+
+# Security and performance
+certifi==2024.2.2
+urllib3==2.2.1

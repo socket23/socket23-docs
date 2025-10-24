@@ -1,12 +1,84 @@
+# Git
+.git
+.gitignore
+.gitattributes
 **/.git
 **/.github
-__pycache__
-*.pyc
-.DS_Store
-.env
-node_modules
-.git
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation (not needed in container)
 README.md
+LICENSE
+CONTRIBUTING.md
+CHANGELOG.md
+
+# Python
+__pycache__/
+**/__pycache__
+*.py[cod]
+*$py.class
+*.pyc
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Node (if any)
+node_modules/
+
+# MkDocs build output (will be rebuilt in container)
+site/
+.cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.*
+
+# Docker
 Dockerfile
-.dockerignore
 docker-compose.yml
+.dockerignore
+
+# Build scripts (not needed in runtime)
+build.sh
+build.ps1
+
+# OS files
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Secrets
+*.pem
+*.key
+*.crt
+secrets/
+credentials/

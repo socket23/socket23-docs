@@ -1,21 +1,153 @@
 site_name: Socket23 Cybersecurity Research
 site_url: https://socket23.com
+site_description: Cybersecurity infrastructure projects, research findings, and security tools documentation
+site_author: Socket23 Research Team
+copyright: Copyright &copy; 2024 Socket23 - Cybersecurity Research
+
+# Repository
+repo_url: https://github.com/socket23/socket23-docs
+repo_name: socket23/socket23-docs
+edit_uri: edit/main/docs/
+
 theme:
   name: material
+  language: en
+
+  # Color scheme
   palette:
-    primary: blue
-    accent: indigo
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Fonts
   font:
     text: Roboto
     code: Roboto Mono
+
+  # Features
+  features:
+    - navigation.instant        # Instant loading
+    - navigation.tracking       # Anchor tracking
+    - navigation.tabs           # Navigation tabs
+    - navigation.tabs.sticky    # Sticky navigation tabs
+    - navigation.sections       # Navigation sections
+    - navigation.expand         # Expand navigation by default
+    - navigation.top            # Back to top button
+    - navigation.footer         # Footer navigation
+    - search.suggest            # Search suggestions
+    - search.highlight          # Highlight search results
+    - search.share              # Share search results
+    - content.code.copy         # Copy code button
+    - content.code.annotate     # Code annotations
+    - content.tabs.link         # Link content tabs
+
+  # Logo and favicon
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/shield-lock
+  favicon: assets/favicon.ico
+
+# Navigation
 nav:
   - Home: index.md
   - Projects: projects.md
   - Research: research.md
   - Tools: tools.md
   - About: about.md
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+# Markdown Extensions
 markdown_extensions:
-  - toc
-  - tables
-  - fenced_code_blocks
+  # Python Markdown
+  - abbr
   - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS and JavaScript
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+# Extra configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/socket23
+      name: Socket23 on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Socket23Research
+      name: Socket23 on Twitter
+    - icon: fontawesome/solid/envelope
+      link: mailto:research@socket23.com
+      name: Email Socket23
+
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Replace with your Google Analytics ID
+
+  generator: false  # Remove "Made with Material for MkDocs" footer
+
+# Validation
+strict: true
