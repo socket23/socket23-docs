@@ -1,0 +1,12 @@
+**/.git
+**/.github
+__pycache__
+*.pyc
+.DS_Store
+.env
+node_modules
+.git
+README.md
+Dockerfile
+.dockerignore
+docker-compose.yml

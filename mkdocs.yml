@@ -1,0 +1,21 @@
+site_name: Socket23 Cybersecurity Research
+site_url: https://socket23.com
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+nav:
+  - Home: index.md
+  - Projects: projects.md
+  - Research: research.md
+  - Tools: tools.md
+  - About: about.md
+markdown_extensions:
+  - toc
+  - tables
+  - fenced_code_blocks
+  - admonition
