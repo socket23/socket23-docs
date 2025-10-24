@@ -16,4 +16,4 @@ markdown==3.5.2
 
 # Security and performance
 certifi==2024.2.2
-urllib3==2.2.1
+urllib3==2.5.0
