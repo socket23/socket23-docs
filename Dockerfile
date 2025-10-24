@@ -1,5 +1,5 @@
 # Multi-stage build for smaller final image
-FROM --platform=${BUILDPLATFORM:-linux/arm/v7} python:3.11-alpine AS builder
+FROM --platform=${BUILDPLATFORM:-linux/arm/v7} python:3.14-alpine AS builder
 
 # Install build dependencies
 RUN apk add --no-cache \
@@ -23,7 +23,7 @@ COPY . .
 RUN /root/.local/bin/mkdocs build --strict
 
 # Final stage - minimal runtime image
-FROM --platform=${TARGETPLATFORM:-linux/arm/v7} python:3.11-alpine
+FROM --platform=${TARGETPLATFORM:-linux/arm/v7} python:3.14-alpine
 
 # Install runtime dependencies only
 RUN apk add --no-cache \
